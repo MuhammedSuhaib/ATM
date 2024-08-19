@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 let myBalance = 10000;
 let myPin = 1112;
 let pinAnswer = await inquirer.prompt({
@@ -8,7 +9,7 @@ let pinAnswer = await inquirer.prompt({
     type: "number",
 });
 if (pinAnswer.Pin === myPin) {
-    console.log("Pin is correct");
+    console.log(chalk.greenBright("Pin is correct ✅"));
     let selectOperation = await inquirer.prompt({
         name: "selectOperation",
         message: "Select your operation",
@@ -73,6 +74,6 @@ if (pinAnswer.Pin === myPin) {
     }
 }
 else {
-    console.log("Pin is incorrect");
+    console.log(chalk.redBright("Pin is incorrect ❌"));
 }
 ;

@@ -2,6 +2,7 @@
 
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 let myBalance = 10000; 
 let myPin = 1112;
 
@@ -17,7 +18,7 @@ let pinAnswer = await inquirer.prompt
 
   if (pinAnswer.Pin === myPin)
 {
-    console.log("Pin is correct");
+    console.log(chalk.greenBright("Pin is correct ✅"));
     let selectOperation = await inquirer.prompt
     (
         {
@@ -111,4 +112,4 @@ let pinAnswer = await inquirer.prompt
 
         }
 else{
-    console.log("Pin is incorrect");};
+    console.log(chalk.redBright("Pin is incorrect ❌"));};
